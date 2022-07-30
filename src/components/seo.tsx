@@ -45,6 +45,7 @@ function Seo({ description, title, children }) {
 
 Seo.defaultProps = {
   description: ``,
+  children: null
 }
 
 Seo.propTypes = {

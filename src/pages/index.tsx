@@ -1,10 +1,9 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from "react";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import Seo from "../components/seo";
+import "../assets/scss/main.scss";
 
 const links = [
   {
@@ -70,11 +69,11 @@ const moreLinks = [
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <Seo title="Home" />
-    <div className={styles.textCenter}>
+    <div >
       <StaticImage
-        src="../images/example.png"
+        src="../assets/images/logo.png"
         loading="eager"
         width={64}
         quality={95}
@@ -82,10 +81,10 @@ const IndexPage = () => (
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       />
-      <h1>
+      <h1 className="bg-red-400">
         Welcome to <b>Gatsby!</b>
       </h1>
-      <p className={styles.intro}>
+      <p >
         <b>Example pages:</b>{" "}
         {samplePageLinks.map((link, i) => (
           <React.Fragment key={link.url}>
@@ -97,16 +96,16 @@ const IndexPage = () => (
         Edit <code>src/pages/index.js</code> to update this page.
       </p>
     </div>
-    <ul className={styles.list}>
+    <ul >
       {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
+        <li key={link.url} >
           <a
-            className={styles.listItemLink}
+            
             href={`${link.url}${utmParameters}`}
           >
             {link.text} ↗
           </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
+          <p >{link.description}</p>
         </li>
       ))}
     </ul>
@@ -116,7 +115,7 @@ const IndexPage = () => (
         {i !== moreLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))}
-  </Layout>
+    </>
 )
 
 export const Head = () => <Seo title="Home" />
