@@ -9,9 +9,9 @@ import React, { FC, Children } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 interface SeoProps {
-  description: string;
   title: string;
-  children: typeof Children;
+  description?: string;
+  children?: typeof Children;
 }
 
 const query = graphql`
@@ -33,13 +33,13 @@ const Seo: FC<SeoProps> = ({ description, title, children }) => {
 
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{defaultTitle ? `${defaultTitle} | ${title}` : title}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
+      <meta name="twitter:creator" content={site.siteMetadata?.author || `@fimbres`} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       {children}
