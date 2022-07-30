@@ -1,0 +1,19 @@
+.footer {
+    @apply flex flex-col items-center w-full py-8 px-3;
+
+    &__text {
+        @apply text-base md:text-xl font-medium;
+
+        .normal {
+            @apply text-center;
+        }
+    }
+
+    &__inner {
+        @apply flex justify-between items-center w-full mt-20;
+    }
+
+    &__links {
+        @apply flex;
+    }
+}
