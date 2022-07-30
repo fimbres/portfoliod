@@ -8,6 +8,7 @@ import "../assets/scss/main.scss";
 const IndexPage: FC = () => (
   <>
     <Seo title="Home" />
+    <div className="bg-red-400 text-5xl font-bold">hola</div>
   </>
 )
 
