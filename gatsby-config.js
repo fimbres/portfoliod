@@ -29,10 +29,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Fimbres Technologies`,
+        short_name: `Fimbres`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#FFFFFF`,
         display: `minimal-ui`,
         icon: `src/assets/images/favicon.png`,
       },
