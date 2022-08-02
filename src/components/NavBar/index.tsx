@@ -1,24 +1,54 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Link } from 'gatsby';
-import { GiHamburgerMenu } from 'react-icons/gi';
 
-import Logo from '../../assets/images/logo.png';
+import Logo from "../../assets/svg/logo.svg";
 import "./NavBar.scss";
+import Toggle from './Toggle';
+import MobileMenu from './MobileMenu';
+
+export interface navItem {
+  name: string;
+  to: string;
+}
 
 const NavBar: FC = () => {
+  const [scrollHeight, setScrollHeight] = useState<number>(0);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const navItems: navItem[] = [
+    {
+      name: "About Me",
+      to: "/about-me"
+    },
+    {
+      name: "Contact",
+      to: "/contact"
+    },
+  ];
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollHeight(position);
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
   return (
-    <div className='navbar'>
-      <div className='navbar__items'>
-        <Link to='/' className='navbar__items__logo'>
-          <img src={Logo} alt="Logo" className='navbar__items__logo__img'/>
-          <div className='navbar__items__logo__text'>Fimbres</div>
-        </Link>
-        <div className='navbar__items__nav-items'>
-          <Link to='/' className='navbar__items__nav-items__nav-item'>Contact</Link>
+    <>
+      <div className={`navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}`}>
+        <div className='navbar__items'>
+          <Link to='/' className='navbar__items__logo'>
+            <Logo className='navbar__items__logo__img'/>
+            <div className='navbar__items__logo__text'>Fimbres</div>
+          </Link>
+          <div className='navbar__items__nav-items'>
+            {navItems.map((item, index) => <Link key={index} to={item.to} className='navbar__items__nav-items__nav-item' activeClassName='text-white'>{item.name}</Link>)}
+            <Toggle />
+          </div>
+          <div className={`navbar__items__hamburger-menu ${showMobileMenu ? "open" : ""}`} onClick={() => setShowMobileMenu(!showMobileMenu)}/>
         </div>
-        <GiHamburgerMenu className='navbar__items__hamburger-menu'/>
       </div>
-    </div>
+      <MobileMenu navItems={navItems} showMobileMenu={showMobileMenu}/>
+    </>
   )
 }
 
