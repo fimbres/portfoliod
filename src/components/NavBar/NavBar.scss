@@ -1,0 +1,93 @@
+.navbar {
+    @apply fixed inset-x-0 top-0 p-3 transition-colors duration-300 ease-in-out border-b border-transparent;
+    z-index: 8;
+
+    &--active{
+        @apply bg-gray-100 dark:bg-zinc-900 border-red-500;
+    }
+
+    &--mobile{
+        @apply bg-gray-100 dark:bg-zinc-900 md:bg-transparent;
+    }
+
+    &--inactive{
+        @apply bg-transparent;
+    }
+
+    &__items {
+        @apply flex justify-between items-center max-w-7xl mx-auto;
+
+        &__logo {
+            @apply flex items-center;
+
+            &__img {
+                @apply h-10 aspect-square;
+            }
+
+            &__text {
+                @apply text-red-500 text-2xl font-bold ml-3;
+            }
+        }
+
+        &__nav-items {
+            @apply hidden md:flex space-x-4 items-center;
+
+            &__nav-item {
+                @apply text-gray-600 dark:text-gray-300 text-xl font-semibold;
+
+                &--inactive{
+                    @apply text-gray-100;
+
+                    &:hover{
+                        @apply text-gray-400;
+                    }
+                }
+    
+                &:hover {
+                    @apply text-gray-400 dark:text-gray-100;
+                }
+            }
+        }
+
+        &__hamburger-menu {
+            @apply fixed bg-red-500 transition-all duration-500 ease-in-out md:hidden inline;
+            z-index: 15;
+            right: 12px;
+            top: 2rem;
+            width: 28px;
+            height: 3px;
+
+            &::before {
+                @apply absolute bg-red-500;
+                content: '';
+                top: -8px;
+                width: 28px;
+                height: 3px;
+            }
+
+            &::after {
+                @apply absolute bg-red-500;
+                content: '';
+                top: 8px;
+                width: 20px;
+                height: 3px;
+            }
+
+            &.open {
+                transform: rotate(720deg);
+                background: transparent;
+                
+                &::before {
+                    transform: rotate(45deg) translate(5px, 8px);
+                }
+
+                &::after {
+                    width: 28px;
+                    transform: rotate(-45deg) translate(3px, -7px);
+                }
+            }
+        }
+
+
+    }
+}

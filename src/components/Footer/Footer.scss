@@ -1,0 +1,23 @@
+.footer {
+    @apply flex flex-col items-center w-full py-8 px-3 bg-gray-100 dark:bg-zinc-900;
+
+    &__text {
+        @apply text-sm md:text-base font-medium text-zinc-900 dark:text-gray-100;
+
+        &.normal {
+            @apply text-base md:text-xl text-center;
+        }
+    }
+
+    &__inner {
+        @apply flex justify-between items-center w-full mt-20;
+    }
+
+    &__links {
+        @apply flex text-zinc-900 dark:text-gray-100 ml-2;
+
+        a:hover{
+            @apply text-red-500 transition-colors ease-in-out duration-500;
+        }
+    }
+}

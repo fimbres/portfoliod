@@ -1,0 +1,15 @@
+.toggle {
+    @apply flex relative w-16 h-8 bg-gray-300 rounded-full;
+
+    &__button {
+        @apply flex absolute justify-center items-center translate-x-3/4 top-1/2 -translate-y-1/2 h-10 aspect-square rounded-full bg-stone-700 transition-all cursor-pointer;
+
+        &.light{
+            @apply -translate-x-1/4 bg-amber-400;
+        }
+
+        &__icon {
+            @apply h-5 w-5 text-white;
+        }
+    }
+}
