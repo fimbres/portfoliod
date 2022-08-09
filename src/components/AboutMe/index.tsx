@@ -5,7 +5,7 @@ import "./AboutMe.scss";
 
 export const AboutMe = () => {
   return (
-    <div className='bg-neutral-700'>
+    <div className='bg-zinc-300 dark:bg-neutral-700'>
         <div className='about-me'>
             <StaticImage src='../../assets/images/profile.png' alt="Isaac Fimbres" placeholder="tracedSVG" className='about-me__image'/>
             <div className='about-me__info-container'>

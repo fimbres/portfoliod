@@ -13,7 +13,7 @@
         }
 
         &__text {
-            @apply text-white mb-3 text-base break-words;
+            @apply text-zinc-700 dark:text-white mb-3 text-base break-words;
         }
     }
 
@@ -26,10 +26,18 @@
     @apply w-full py-3 rounded-lg;
 
     &--primary {
-        @apply bg-gradient-to-b from-red-600 to-red-900 text-white font-medium text-lg;
+        @apply bg-gradient-to-b from-red-600 to-red-900 text-white font-medium text-lg transition-opacity ease-in-out duration-500;
+
+        &:hover {
+            @apply opacity-70;
+        }
     }
 
     &--secondary {
-        @apply bg-transparent text-red-500 font-medium text-lg border-2 border-red-600;
+        @apply bg-transparent text-red-500 font-medium text-lg border-2 border-red-600 transition-colors ease-in-out duration-500;
+
+        &:hover {
+            @apply bg-red-600 border-transparent text-white;
+        }
     }
 }
