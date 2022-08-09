@@ -1,0 +1,15 @@
+.skill {
+    @apply w-full h-full rounded-lg bg-zinc-300 dark:bg-neutral-700 flex flex-col justify-center items-center py-6 space-y-6 transition-all duration-500 ease-in-out;
+
+    &:hover {
+        @apply -translate-y-1 scale-110 drop-shadow-lg;
+    }
+
+    &__text {
+        @apply text-red-500 text-lg font-medium text-center px-2;
+    }
+
+    &__icon {
+        @apply text-red-500 flex justify-center;
+    }
+}
