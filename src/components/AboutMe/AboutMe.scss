@@ -1,0 +1,35 @@
+.about-me {
+    @apply max-w-6xl mx-auto flex flex-col md:flex-row-reverse px-6 py-20 items-center;
+
+    &__image {
+        @apply rounded-full w-full h-full object-cover md:mb-0 mb-12;
+    }
+
+    &__info-container {
+        @apply md:mr-16;
+
+        &__title {
+            @apply text-red-500 font-semibold text-3xl mb-6;
+        }
+
+        &__text {
+            @apply text-white mb-3 text-base break-words;
+        }
+    }
+
+    &__button-container {
+        @apply w-full mt-6 flex md:flex-row flex-col md:space-x-4 space-x-0 md:space-y-0 space-y-4;
+    }
+}
+
+.button {
+    @apply w-full py-3 rounded-lg;
+
+    &--primary {
+        @apply bg-gradient-to-b from-red-600 to-red-900 text-white font-medium text-lg;
+    }
+
+    &--secondary {
+        @apply bg-transparent text-red-500 font-medium text-lg border-2 border-red-600;
+    }
+}

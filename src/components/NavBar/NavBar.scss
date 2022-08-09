@@ -1,9 +1,9 @@
 .navbar {
-    @apply fixed inset-x-0 top-0 p-3 transition-colors duration-300 ease-in-out border-b border-transparent;
+    @apply fixed inset-x-0 top-0 p-3 transition-colors duration-300 ease-in-out;
     z-index: 8;
 
     &--active{
-        @apply bg-gray-100 dark:bg-zinc-900 border-red-500;
+        @apply bg-gray-100 dark:bg-zinc-900;
     }
 
     &--mobile{
