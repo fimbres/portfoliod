@@ -30,7 +30,7 @@
         }
 
         &__nav-items {
-            @apply hidden md:flex space-x-4 items-center;
+            @apply hidden md:flex space-x-7 mr-3 items-center;
 
             &__nav-item {
                 @apply text-gray-600 dark:text-gray-300 text-xl font-semibold;

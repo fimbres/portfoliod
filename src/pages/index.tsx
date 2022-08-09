@@ -5,12 +5,14 @@ import Layout from "../components/Layout";
 import Seo from "../components/seo";
 import { AboutMe } from "../components/AboutMe";
 import "../assets/scss/main.scss";
+import { Skills } from "../components/Skills";
 
 const IndexPage: FC = () => (
   <Layout>
     <Seo title="Home" />
     <HomeHeader />
     <AboutMe />
+    <Skills />
   </Layout>
 )
 
