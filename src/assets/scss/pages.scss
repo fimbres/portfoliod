@@ -1,0 +1,12 @@
+.page {
+    @apply max-w-lg mx-auto flex flex-col items-center justify-center;
+    min-height: calc(100vh - (207px));
+
+    &__title {
+        @apply text-red-500 text-6xl font-semibold text-center;
+    }
+
+    &__button {
+        @apply py-3 px-6 rounded-lg bg-gradient-to-b from-red-600 to-red-900 text-white font-medium text-lg transition-opacity ease-in-out duration-500 hover:opacity-80 text-center mt-5 cursor-pointer;
+    }
+}
