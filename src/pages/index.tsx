@@ -4,8 +4,9 @@ import HomeHeader from "../components/HomeHeader/HomeHeader";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 import { AboutMe } from "../components/AboutMe";
-import "../assets/scss/main.scss";
 import { Skills } from "../components/Skills";
+import { Projects } from "../components/Projects";
+import "../assets/scss/main.scss";
 
 const IndexPage: FC = () => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage: FC = () => (
     <HomeHeader />
     <AboutMe />
     <Skills />
+    <Projects />
   </Layout>
 )
 
