@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'gatsby';
+import { globalHistory } from "@reach/router";
 
 import Logo from "../../assets/svg/logo.svg";
 import "./NavBar.scss";
@@ -14,6 +15,8 @@ export interface navItem {
 const NavBar: FC = () => {
   const [scrollHeight, setScrollHeight] = useState<number>(0);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const path = globalHistory.location.pathname;
+  const navbarClassName = path === "/" ? `navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}` : "navbar navbar--active";
   const navItems: navItem[] = [
     {
       name: "About Me",
@@ -34,7 +37,7 @@ const NavBar: FC = () => {
 
   return (
     <>
-      <div className={`navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}`}>
+      <div className={navbarClassName}>
         <div className='navbar__items'>
           <Link to='/' className='navbar__items__logo'>
             <Logo className='navbar__items__logo__img'/>
