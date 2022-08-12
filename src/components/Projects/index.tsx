@@ -12,7 +12,7 @@ const query = graphql`
     allContentfulProject {
       nodes {
         carousselImage {
-          gatsbyImage(placeholder: TRACED_SVG, width: 350)
+          gatsbyImage(placeholder: TRACED_SVG, width: 350, height: 300)
         }
         title
         slug

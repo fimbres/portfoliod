@@ -9,9 +9,8 @@ export const query = graphql`
       carousselImage {
         gatsbyImage(width: 300)
       }
-      codeUrl {
-        raw
-      }
+      codeUrl
+      demoUrl
       features {
         feature
       }
@@ -20,9 +19,7 @@ export const query = graphql`
         gatsbyImage(width: 300)
         description
       }
-      longDescription {
-        longDescription
-      }
+      longDescription
       shortDescription
       slug
       title
