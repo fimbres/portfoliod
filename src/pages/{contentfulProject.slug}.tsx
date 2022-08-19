@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import TemplateHeader from '../components/TemplateHeader';
+import Links from '../components/Links';
 
 export const query = graphql`
   query ($slug: String) {
@@ -38,12 +39,12 @@ interface TemplateProps {
 }
 
 const Template: FC<TemplateProps> = ({ data }) => {
-  const { shortDescription, title, carousselImage, slug } = data.contentfulProject;
+  const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl } = data.contentfulProject;
   const mainImage = getImage(carousselImage);
   return (
     <Layout>
       <TemplateHeader title={title} description={shortDescription} image={mainImage!} slug={slug}/>
-      <div className='mt-56'>{shortDescription}</div>
+      <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
     </Layout>
   )
 }

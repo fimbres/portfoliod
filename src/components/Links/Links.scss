@@ -1,0 +1,19 @@
+.links {
+    @apply max-w-2xl mx-auto flex flex-col md:rounded-2xl bg-red-500 px-5 md:px-12 py-16 md:py-8;
+
+    &__buttons {
+        @apply flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full;
+
+        &__button{
+            @apply w-full flex justify-center items-center py-4 px-5 rounded-lg cursor-pointer bg-black dark:bg-white text-white dark:text-black font-semibold;
+
+            > svg {
+                @apply mr-4 h-6 w-6;
+            }
+
+            &--disabled {
+                @apply opacity-40 cursor-not-allowed font-medium;
+            }
+        }
+    }
+}
