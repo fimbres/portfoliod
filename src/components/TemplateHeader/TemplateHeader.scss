@@ -1,0 +1,37 @@
+.template-header {
+    @apply max-w-3xl mx-auto flex flex-col md:flex-row md:rounded-2xl bg-red-500 px-2 md:px-12 py-16 md:py-8;
+
+    &__text-container {
+        @apply flex flex-col justify-end mr-12 w-1/2;
+
+        &__title {
+            @apply text-5xl font-semibold mb-3 text-black dark:text-white;
+        }
+
+        &__text {
+            @apply text-lg font-medium text-black dark:text-white;
+        }
+    }
+
+    &__image-container {
+        @apply flex justify-end w-full md:w-1/2;
+
+        &__image {
+            @apply drop-shadow-2xl;
+        }
+    }
+}
+
+.desktop-Header {
+    width: 300px;
+}
+
+.mobile-vertical-Header {
+    @apply md:mr-12;
+    width: 122px;
+}
+
+.mobile-horizontal-Header {
+    margin-top: 90px;
+    width: 300px;
+}
