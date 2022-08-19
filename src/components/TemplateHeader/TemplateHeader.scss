@@ -1,11 +1,11 @@
 .template-header {
-    @apply max-w-3xl mx-auto flex flex-col md:flex-row md:rounded-2xl bg-red-500 px-2 md:px-12 py-16 md:py-8;
+    @apply max-w-3xl mx-auto flex flex-col md:flex-row md:rounded-2xl bg-white dark:bg-neutral-800 px-2 md:px-12 py-16 md:py-8;
 
     &__text-container {
         @apply flex flex-col justify-end mr-12 w-1/2;
 
         &__title {
-            @apply text-5xl font-semibold mb-3 text-black dark:text-white;
+            @apply text-5xl font-semibold mb-5 text-black dark:text-white;
         }
 
         &__text {

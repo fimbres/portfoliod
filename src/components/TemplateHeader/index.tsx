@@ -12,7 +12,7 @@ interface TemplateHeaderProps {
 
 const TemplateHeader: FC<TemplateHeaderProps> = ({ title, description, image, slug }) => {
   return (
-    <div className='md:py-16 bg-neutral-300 dark:bg-neutral-800 mt-12'>
+    <div className='md:py-16 bg-neutral-300 dark:bg-neutral-700 mt-12'>
         <div className='template-header'>
             <div className='template-header__text-container'>
                 <div className='template-header__text-container__title'>{title}</div>
