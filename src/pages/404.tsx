@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "gatsby";
 
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import "../assets/scss/pages.scss";
 
@@ -17,5 +17,4 @@ const NotFoundPage: FC = () => (
 )
 
 export const Head = () => <Seo title="Not Found" />;
-
 export default NotFoundPage;

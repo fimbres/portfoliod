@@ -9,11 +9,11 @@
         @apply md:mr-16;
 
         &__title {
-            @apply text-red-500 font-semibold text-3xl mb-6;
+            @apply text-red-500 font-semibold text-3xl mb-6 text-center md:text-left;
         }
 
         &__text {
-            @apply text-zinc-700 dark:text-white mb-3 text-base break-words;
+            @apply text-zinc-700 dark:text-white mb-3 text-base break-words text-center md:text-left;
         }
     }
 

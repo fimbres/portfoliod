@@ -1,11 +1,15 @@
 import React, { FC } from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
+
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
+import TemplateHeader from '../components/TemplateHeader';
+import Links from '../components/Links';
 
 export const query = graphql`
-  query ($title: String) {
-    contentfulProject(title: {eq: $title}) {
+  query ($slug: String) {
+    contentfulProject(slug: {eq: $slug}) {
       carousselImage {
         gatsbyImage(width: 300)
       }
@@ -14,7 +18,6 @@ export const query = graphql`
       features {
         feature
       }
-      id
       images {
         gatsbyImage(width: 300)
         description
@@ -26,17 +29,26 @@ export const query = graphql`
       technologies {
         percentage
         technology
+        color
       }
     }
   }
 `;
 
-const Template: FC = ({ data }) => {
+interface TemplateProps {
+  data: any;
+}
+
+const Template: FC<TemplateProps> = ({ data }) => {
+  const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl } = data.contentfulProject;
+  const mainImage = getImage(carousselImage);
   return (
     <Layout>
-      <div className='mt-56'>{data.contentfulProject.shortDescription}</div>
+      <TemplateHeader title={title} description={shortDescription} image={mainImage!} slug={slug}/>
+      <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
     </Layout>
   )
 }
 
+export const Head = () => <Seo title="Project" />;
 export default Template;
