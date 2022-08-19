@@ -2,19 +2,19 @@
     @apply max-w-3xl mx-auto flex flex-col md:flex-row md:rounded-2xl bg-white dark:bg-neutral-800 px-2 md:px-12 py-16 md:py-8;
 
     &__text-container {
-        @apply flex flex-col justify-end mr-12 w-1/2;
+        @apply flex flex-col justify-end md:mr-12 w-full md:w-1/2 px-5 md:px-0;
 
         &__title {
-            @apply text-5xl font-semibold mb-5 text-black dark:text-white;
+            @apply text-5xl font-semibold mb-5 text-black dark:text-white text-center md:text-left;
         }
 
         &__text {
-            @apply text-lg font-medium text-black dark:text-white;
+            @apply text-lg font-medium text-black dark:text-white text-center md:text-left mb-5 md:mb-0;
         }
     }
 
     &__image-container {
-        @apply flex justify-end w-full md:w-1/2;
+        @apply flex justify-center md:justify-end w-full md:w-1/2;
 
         &__image {
             @apply drop-shadow-2xl;
