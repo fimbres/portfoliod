@@ -4,8 +4,8 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 
 export const query = graphql`
-  query ($title: String) {
-    contentfulProject(title: {eq: $title}) {
+  query ($slug: String) {
+    contentfulProject(slug: {eq: $slug}) {
       carousselImage {
         gatsbyImage(width: 300)
       }
@@ -31,7 +31,11 @@ export const query = graphql`
   }
 `;
 
-const Template: FC = ({ data }) => {
+interface TemplateProps {
+  data: any;
+}
+
+const Template: FC<TemplateProps> = ({ data }) => {
   return (
     <Layout>
       <div className='mt-56'>{data.contentfulProject.shortDescription}</div>

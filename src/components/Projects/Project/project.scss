@@ -1,0 +1,29 @@
+.project {
+    @apply flex flex-col justify-center items-center lg:p-8 p-4;
+
+    &__title {
+        @apply text-black dark:text-white text-center text-xl font-medium mb-3;
+    }
+
+    &__text {
+        @apply text-black dark:text-white text-base font-normal text-center mb-8;
+    }
+
+    &__image{
+        @apply mb-5 drop-shadow-2xl;
+    }
+}
+
+.desktop {
+    width: 300px;
+}
+
+.mobile-vertical {
+    width: 122px;
+}
+
+.mobile-horizontal {
+    margin-bottom: 59px;
+    margin-top: 50px;
+    width: 300px;
+}
