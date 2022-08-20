@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { ImageDataLike } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
@@ -42,17 +42,41 @@ export const query = graphql`
 `;
 
 interface TemplateProps {
-  data: any;
+  data: {
+    contentfulProject: {
+      carousselImage: {
+        gatsbyImage: ImageDataLike;
+      };
+      codeUrl: string;
+      demoUrl: string;
+      features: {
+        feature: string;
+      }[];
+      images: {
+        gatsbyImage: ImageDataLike;
+        description: string;
+      }[];
+      longDescription: string;
+      shortDescription: string;
+      slug: string;
+      title: string;
+      technologies: {
+        percentage: string;
+        technology: string;
+        fromColor: string;
+        toColor: string;
+      }[];
+    }
+  }
 }
 
 const Template: FC<TemplateProps> = ({ data }) => {
   const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl, longDescription, images, features, technologies } = data.contentfulProject;
-  const mainImage = getImage(carousselImage);
 
   return (
     <Layout>
       <Seo title={title} />
-      <TemplateHeader title={title} description={shortDescription} image={mainImage!} slug={slug}/>
+      <TemplateHeader title={title} description={shortDescription} image={carousselImage} slug={slug}/>
       <Description description={longDescription}/>
       <ScreenImages slug={slug} screenImages={images}/>
       <Features features={features}/>
