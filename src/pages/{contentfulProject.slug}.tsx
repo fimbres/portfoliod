@@ -33,7 +33,8 @@ export const query = graphql`
       technologies {
         percentage
         technology
-        color
+        fromColor
+        toColor
       }
     }
   }
