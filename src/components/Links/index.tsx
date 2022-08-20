@@ -10,7 +10,7 @@ interface LinksProps {
 
 const Links: FC<LinksProps> = ({ codeUrl, demoUrl }) => {
   return (
-    <div className='md:py-16 bg-neutral-300 dark:bg-neutral-700'>
+    <div className='md:py-16 bg-neutral-200 dark:bg-zinc-800'>
         <div className='links'>
             <div className='text-center text-2xl font-semibold mb-12 text-black dark:text-white'>Want to see more about this project?</div>
             <div className='links__buttons'>

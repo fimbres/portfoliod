@@ -9,7 +9,7 @@ interface FeaturesProps {
 
 const Features: FC<FeaturesProps> = ({ features }) => {
   return (
-    <div className='bg-zinc-100 dark:bg-neutral-600'>
+    <div className='bg-neutral-300 dark:bg-neutral-700'>
         <div className='features'>
             <div className='features__title'>Features</div>
             <div className='features__grid'>
