@@ -8,6 +8,7 @@ import TemplateHeader from '../components/TemplateHeader';
 import Links from '../components/Links';
 import { Description } from '../components/Description';
 import { ScreenImages } from '../components/ScreenImages';
+import Features from '../components/Features';
 
 export const query = graphql`
   query ($slug: String) {
@@ -42,7 +43,7 @@ interface TemplateProps {
 }
 
 const Template: FC<TemplateProps> = ({ data }) => {
-  const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl, longDescription, images } = data.contentfulProject;
+  const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl, longDescription, images, features } = data.contentfulProject;
   const mainImage = getImage(carousselImage);
 
   return (
@@ -51,6 +52,7 @@ const Template: FC<TemplateProps> = ({ data }) => {
       <TemplateHeader title={title} description={shortDescription} image={mainImage!} slug={slug}/>
       <Description description={longDescription}/>
       <ScreenImages slug={slug} screenImages={images}/>
+      <Features features={features}/>
       <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
     </Layout>
   )
