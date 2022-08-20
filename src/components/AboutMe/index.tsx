@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import CVIngles from '../../assets/pdf/IsaacFimbres_Resume.pdf';
 import "./AboutMe.scss";
 
-export const AboutMe = () => {
+export const AboutMe: FC = () => {
   const Download = () => {
     window.open(CVIngles);
   };

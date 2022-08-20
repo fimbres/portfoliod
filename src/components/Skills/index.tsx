@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { FaReact, FaPython, FaUser, FaGitAlt, FaNodeJs } from 'react-icons/fa';
 import { SiTypescript, SiExpress, SiDotnet, SiMongodb, SiGatsby } from 'react-icons/si';
 import { MdDesignServices } from 'react-icons/md';
@@ -7,7 +7,7 @@ import { GrMysql } from 'react-icons/gr';
 import "./Skills.scss";
 import { Skill } from './Skill';
 
-export const Skills = () => {
+export const Skills: FC = () => {
     const skills = [
         {
             icon: <FaReact size={60}/>,
