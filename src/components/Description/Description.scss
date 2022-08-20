@@ -2,10 +2,10 @@
     @apply max-w-3xl mx-auto flex flex-col px-6 py-20;
 
     &__title {
-        @apply text-red-500 font-semibold text-3xl mb-6 text-center lg:text-left;
+        @apply text-red-500 font-semibold text-3xl mb-6 text-center;
     }
 
     &__text {
-        @apply text-zinc-700 dark:text-white mb-3 text-base break-words text-center lg:text-left;
+        @apply text-zinc-700 dark:text-white mb-3 text-base break-words text-center;
     }
 }

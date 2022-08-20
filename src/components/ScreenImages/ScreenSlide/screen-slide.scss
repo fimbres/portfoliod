@@ -1,0 +1,29 @@
+.screen-slide {
+    @apply flex flex-col justify-center items-center lg:p-8 p-4;
+
+    &__text {
+        @apply text-black dark:text-white text-sm font-normal text-center mb-8;
+    }
+
+    &__image{
+        @apply mb-8 drop-shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 duration-300;
+    }
+}
+
+.screen-slide__desktop {
+    width: 300px;
+}
+
+.screen-slide__mobile-vertical {
+    width: 122px;
+}
+
+.screen-slide__mobile-horizontal {
+    margin-bottom: 59px;
+    margin-top: 50px;
+    width: 300px;
+}
+
+.slide__robot {
+    width: 264px;
+}
