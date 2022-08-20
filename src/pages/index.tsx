@@ -14,7 +14,7 @@ const IndexPage: FC = () => (
     <HomeHeader />
     <AboutMe />
     <Skills />
-    <Projects />
+    <Projects title="Projects"/>
   </Layout>
 )
 

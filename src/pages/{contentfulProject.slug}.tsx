@@ -10,6 +10,7 @@ import { Description } from '../components/Description';
 import { ScreenImages } from '../components/ScreenImages';
 import Features from '../components/Features';
 import Technologies from '../components/Technologies';
+import { Projects } from '../components/Projects';
 
 export const query = graphql`
   query ($slug: String) {
@@ -57,6 +58,7 @@ const Template: FC<TemplateProps> = ({ data }) => {
       <Features features={features}/>
       <Technologies technologies={technologies}/>
       <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
+      <Projects title='Other Projects'/>
     </Layout>
   )
 }

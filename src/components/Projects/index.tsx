@@ -23,7 +23,11 @@ const query = graphql`
   }
 `;
 
-export const Projects: FC = () => {
+interface ProjectsProps {
+  title: string;
+}
+
+export const Projects: FC<ProjectsProps> = ({ title }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { allContentfulProject: { nodes: projects } } = useStaticQuery(query);
 
@@ -32,7 +36,7 @@ export const Projects: FC = () => {
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-center">
           <div className="flex flex-col w-full justify-center items-center overflow-hidden">
-            <div className="text-3xl text-red-500 font-semibold mb-7">Projects</div>
+            <div className="text-3xl text-red-500 font-semibold mb-7">{title}</div>
             <Slider
               adaptiveHeight
               centerMode
