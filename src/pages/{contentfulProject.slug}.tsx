@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import TemplateHeader from '../components/TemplateHeader';
 import Links from '../components/Links';
+import { Description } from '../components/Description';
 
 export const query = graphql`
   query ($slug: String) {
@@ -40,12 +41,13 @@ interface TemplateProps {
 }
 
 const Template: FC<TemplateProps> = ({ data }) => {
-  const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl } = data.contentfulProject;
+  const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl, longDescription } = data.contentfulProject;
   const mainImage = getImage(carousselImage);
   return (
     <Layout>
       <Seo title={title} />
       <TemplateHeader title={title} description={shortDescription} image={mainImage!} slug={slug}/>
+      <Description description={longDescription}/>
       <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
     </Layout>
   )
