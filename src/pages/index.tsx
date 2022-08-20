@@ -18,5 +18,4 @@ const IndexPage: FC = () => (
   </Layout>
 )
 
-export const Head = () => <Seo title="Home" />;
 export default IndexPage;

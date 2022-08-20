@@ -44,11 +44,11 @@ const Template: FC<TemplateProps> = ({ data }) => {
   const mainImage = getImage(carousselImage);
   return (
     <Layout>
+      <Seo title={title} />
       <TemplateHeader title={title} description={shortDescription} image={mainImage!} slug={slug}/>
       <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
     </Layout>
   )
 }
 
-export const Head = () => <Seo title="Project" />;
 export default Template;

@@ -7,6 +7,7 @@ import "../assets/scss/pages.scss";
 
 const NotFoundPage: FC = () => (
     <Layout>
+        <Seo title="Not Found" />
         <div className="bg-white dark:bg-neutral-800">
             <div className="page">
                 <div className="page__title">Page not found! :(</div>
@@ -16,5 +17,4 @@ const NotFoundPage: FC = () => (
     </Layout>
 )
 
-export const Head = () => <Seo title="Not Found" />;
 export default NotFoundPage;
