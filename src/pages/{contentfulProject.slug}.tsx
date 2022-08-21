@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { graphql } from 'gatsby';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
@@ -11,6 +11,8 @@ import { ScreenImages } from '../components/ScreenImages';
 import Features from '../components/Features';
 import Technologies from '../components/Technologies';
 import { Projects } from '../components/Projects';
+import ContactMe from '../components/ContactMe';
+import ModalContext from '../context/ModalContext';
 
 export const query = graphql`
   query ($slug: String) {
@@ -72,18 +74,22 @@ interface TemplateProps {
 
 const Template: FC<TemplateProps> = ({ data }) => {
   const { shortDescription, title, carousselImage, slug, codeUrl, demoUrl, longDescription, images, features, technologies } = data.contentfulProject;
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <Layout>
-      <Seo title={title} />
-      <TemplateHeader title={title} description={shortDescription} image={carousselImage} slug={slug}/>
-      <Description description={longDescription}/>
-      <ScreenImages slug={slug} screenImages={images}/>
-      <Features features={features}/>
-      <Technologies technologies={technologies}/>
-      <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
-      <Projects title='Other Projects'/>
-    </Layout>
+    <ModalContext.Provider value={{ showModal, handleContact: () => setShowModal(!showModal) }}>
+      <Layout>
+        <Seo title={title} />
+        <TemplateHeader title={title} description={shortDescription} image={carousselImage} slug={slug}/>
+        <Description description={longDescription}/>
+        <ScreenImages slug={slug} screenImages={images}/>
+        <Features features={features}/>
+        <Technologies technologies={technologies}/>
+        <Links codeUrl={codeUrl} demoUrl={demoUrl}/>
+        <Projects title='Other Projects'/>
+        <ContactMe />
+      </Layout>
+    </ModalContext.Provider>
   )
 }
 
