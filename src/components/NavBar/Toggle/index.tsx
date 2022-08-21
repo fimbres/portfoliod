@@ -4,8 +4,9 @@ import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import "./Toggle.scss";
 
 const Toggle: FC = () => {
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const userTheme = localStorage.getItem("theme");
+  const isBrowser = typeof window !== "undefined";
+  const systemTheme = isBrowser ? window.matchMedia("(prefers-color-scheme: dark)").matches : false;
+  const userTheme = isBrowser ? localStorage.getItem("theme") : null;
   const [theme, setTheme] = useState<string | null>(null);
   
   const handleChange = () => {

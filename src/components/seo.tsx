@@ -42,6 +42,8 @@ const Seo: FC<SeoProps> = ({ description, title, children }) => {
       <meta name="twitter:creator" content={site.siteMetadata?.author || `@fimbres`} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       {children}
     </>
   )

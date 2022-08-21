@@ -4,13 +4,13 @@ interface Form{
     name: string;
     email: string;
     message: string;
-  }
+}
 
-  interface Errors{
+interface Errors{
     name?: string;
     email?: string;
     message?: string;
-  }
+}
 
 export const useForm = (initialForm : Form, validateForm : (form: Form) => Errors) => {
     const [form, setForm] = useState<Form>(initialForm);

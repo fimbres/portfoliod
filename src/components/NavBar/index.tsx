@@ -18,13 +18,16 @@ const NavBar: FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const path = globalHistory.location.pathname;
   const navbarClassName = path === "/" ? `navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}` : "navbar navbar--active";
+  const isBrowser = typeof window !== "undefined";
 
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollHeight(position);
   }
 
-  path === "/" && window.addEventListener('scroll', handleScroll);
+  if(isBrowser && path === "/"){
+    window.addEventListener('scroll', handleScroll);
+  }
 
   return (
     <ModalContext.Consumer>
