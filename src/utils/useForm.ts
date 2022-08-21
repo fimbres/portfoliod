@@ -16,7 +16,7 @@ export const useForm = (initialForm : Form, validateForm : (form: Form) => Error
     const [form, setForm] = useState<Form>(initialForm);
     const [errors, setErrors] = useState<Errors>({});
     const [loading, setLoading] = useState<boolean>(false);
-    const [response, setResponse] = useState<string | null>(null);
+    const [response, setResponse] = useState<{message: string, code: "success" | "failed"} | null>(null);
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -35,7 +35,7 @@ export const useForm = (initialForm : Form, validateForm : (form: Form) => Error
                         email: form.email,
                         message: form.message
                     }),
-            }).then(response => response ? setResponse('Thank you for your interest!') : setResponse('Something went wrong')).then(data => console.log(data)).catch(error => console.log(error));
+            }).then(response => response ? setResponse({message: 'Success, thank you for your interest!', code: 'success'}) : setResponse({message: 'Something went wrong!', code: 'failed'})).then(data => console.log(data)).catch(error => console.log(error));
             setLoading(false);
         }
         else{
@@ -56,6 +56,12 @@ export const useForm = (initialForm : Form, validateForm : (form: Form) => Error
         });
     };
 
+    const resetForm = () => {
+        setForm({name: '', email: '', message: ''})
+        setErrors({});
+        setResponse(null);
+    };
+
     return {
         form,
         errors,
@@ -63,6 +69,7 @@ export const useForm = (initialForm : Form, validateForm : (form: Form) => Error
         response,
         handleSubmit,
         handleBlur,
-        handleChange
+        handleChange,
+        resetForm,
     };
 }
