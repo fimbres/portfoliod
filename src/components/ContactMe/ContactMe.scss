@@ -1,0 +1,59 @@
+.background {
+    @apply fixed inset-0 backdrop-blur-md backdrop-brightness-50 transition duration-500 ease-in-out delay-200;
+
+    &__visible {
+        @apply opacity-100 pointer-events-auto;
+    }
+
+    &__invisible {
+        @apply opacity-0 pointer-events-none;
+    }
+}
+
+.modal {
+    @apply fixed inset-x-0 top-1/2 transition duration-500 ease-in-out delay-100;
+
+    &__visible {
+        @apply -translate-y-1/2 opacity-100 pointer-events-auto;
+    }
+
+    &__invisible {
+        @apply opacity-0 pointer-events-none;
+    }
+}
+
+.form {
+    @apply max-w-xl mx-5 sm:mx-auto rounded-xl bg-white dark:bg-neutral-700;
+
+    &__header {
+        @apply flex justify-end w-full p-5 border-b border-neutral-800 dark:border-white;
+
+        > svg {
+            @apply h-8 w-8 cursor-pointer dark:text-white;
+        }
+    }
+
+    &__body {
+        @apply p-5;
+
+        &__title {
+            @apply text-2xl dark:text-white font-semibold text-center mb-2;
+        }
+
+        &__info {
+            @apply font-medium text-center;
+        }
+
+        &__error {
+            @apply text-red-500 font-medium text-sm mb-1.5;
+        }
+
+        &__input {
+            @apply mb-1.5 p-2 rounded-lg w-full bg-gray-200 dark:bg-neutral-500 dark:placeholder-gray-300 dark:text-white;
+        }
+
+        &__button {
+            @apply mt-6 w-full py-3 rounded-lg bg-gradient-to-b from-red-600 to-red-900 text-white font-medium text-lg transition-opacity ease-in-out duration-500;
+        }
+    }
+}
