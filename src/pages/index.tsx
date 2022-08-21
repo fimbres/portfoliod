@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
 import HomeHeader from "../components/HomeHeader/HomeHeader";
 import Layout from "../components/Layout";
@@ -7,16 +7,24 @@ import { AboutMe } from "../components/AboutMe";
 import { Skills } from "../components/Skills";
 import { Projects } from "../components/Projects";
 import "../assets/scss/main.scss";
+import ContactMe from "../components/ContactMe";
+import ModalContext from "../context/ModalContext";
 
-const IndexPage: FC = () => (
-  <Layout>
-    <Seo title="Home" />
-    <HomeHeader />
-    <AboutMe />
-    <Skills />
-    <Projects />
-  </Layout>
-)
+const IndexPage: FC = () => {
+  const [showModal, setShowModal] = useState(false);
 
-export const Head = () => <Seo title="Home" />;
+  return (
+    <ModalContext.Provider value={{ showModal, handleContact: () => setShowModal(!showModal) }}>
+      <Layout>
+        <Seo title="Home" />
+        <HomeHeader />
+        <AboutMe />
+        <Skills />
+        <Projects title="Projects"/>
+        <ContactMe />
+      </Layout>
+    </ModalContext.Provider>
+  )
+}
+
 export default IndexPage;

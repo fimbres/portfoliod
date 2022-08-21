@@ -1,0 +1,26 @@
+$progress_value: 0;
+
+.progress-bar {
+    @apply relative h-48 w-48;
+
+    &__card {
+        @apply absolute w-full h-full rounded-full dark:border-neutral-800 drop-shadow-xl;
+        border-width: 25px;
+    }
+
+    &__progress {
+        @apply absolute top-0 left-0;
+        
+        > svg {
+            @apply w-48 h-48;
+            fill: none;
+            stroke: url(#paint0_angular_109_2);
+            stroke-width: 25px;
+            stroke-dasharray: 405;
+        }
+    }
+
+    &__percentage {
+        @apply absolute top-0 left-0 w-full h-full flex items-center justify-center dark:text-white font-semibold text-2xl;
+    }
+}

@@ -1,0 +1,19 @@
+.features {
+    @apply max-w-5xl mx-auto flex flex-col px-6 py-20 items-center;
+
+    &__grid {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full h-full gap-2 md:gap-4; 
+    }
+
+    &__title {
+        @apply text-red-500 font-semibold text-3xl mb-6 text-center md:text-left;
+    }
+}
+
+.feature-icon {
+    @apply flex justify-center items-center p-3 bg-red-400 w-min mx-auto rounded-lg;
+
+    > svg {
+        @apply h-10 w-10 text-red-500;
+    }
+}

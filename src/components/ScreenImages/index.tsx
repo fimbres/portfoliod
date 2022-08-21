@@ -1,42 +1,30 @@
 import React, { FC, useState } from "react";
-import { useStaticQuery, graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { getImage, ImageDataLike } from 'gatsby-plugin-image';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Project from "./Project";
+import ScreenSlide  from "./ScreenSlide";
 
-const query = graphql`
-  query {
-    allContentfulProject {
-      nodes {
-        carousselImage {
-          gatsbyImage(placeholder: TRACED_SVG, width: 964)
-        }
-        title
-        slug
-        id
-        shortDescription
-      }
-    }
-  }
-`;
-
-interface ProjectsProps {
-  title: string;
+interface ImagesItems {
+    description: string;
+    gatsbyImage: ImageDataLike;
 }
 
-export const Projects: FC<ProjectsProps> = ({ title }) => {
+interface ScreenImagesProps {
+    screenImages: ImagesItems[];
+    slug: string;
+}
+
+export const ScreenImages: FC<ScreenImagesProps> = ({ screenImages, slug }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const { allContentfulProject: { nodes: projects } } = useStaticQuery(query);
 
   return (
-    <div className="py-24 bg-neutral-300 dark:bg-neutral-800">
+    <div className="py-24 bg-neutral-200 dark:bg-neutral-800">
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-center">
           <div className="flex flex-col w-full justify-center items-center overflow-hidden">
-            <div className="text-3xl text-red-500 font-semibold mb-7">{title}</div>
+            <div className="text-3xl text-red-500 font-semibold mb-7 text-center">Some Screens Of The Project</div>
             <Slider
               adaptiveHeight
               centerMode
@@ -48,16 +36,18 @@ export const Projects: FC<ProjectsProps> = ({ title }) => {
               className="flex justify-center w-full"
               beforeChange={(index) => setSelectedIndex(index)}
             >
-              {projects.map(project => {
-                const pathToImage = getImage(project.carousselImage);
+              {screenImages.map((screenShot, index) => {
+                const pathToImage = getImage(screenShot.gatsbyImage);
+                const imageClassName = slug === "project-01" ? "screen-slide__mobile-horizontal" : slug === "eva-gyroscope" ? "screen-slide__mobile-vertical" : "screen-slide__desktop";
 
                 return (
-                    <Project
-                        key={project.id}
-                        slug={project.slug}
-                        title={project.title}
+                    <ScreenSlide
+                        key={index}
+                        index={index}
+                        slug={slug}
+                        imageClassName={imageClassName}
                         image={pathToImage!}
-                        description={project.shortDescription}
+                        description={screenShot.description}
                     />
                 )
               })}
@@ -65,7 +55,7 @@ export const Projects: FC<ProjectsProps> = ({ title }) => {
           </div>
         </div>
         <div className="flex justify-center space-x-1 lg:mt-0 mt-5">
-          {projects.map((_, index) => {
+          {screenImages.map((_, index) => {
             return (
               <span
                 key={index}
