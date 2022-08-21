@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 
 import HomeHeader from "../components/HomeHeader/HomeHeader";
 import Layout from "../components/Layout";
-import Seo from "../components/Seo";
+import Seo from "../components/seo";
 import { AboutMe } from "../components/AboutMe";
 import { Skills } from "../components/Skills";
 import { Projects } from "../components/Projects";

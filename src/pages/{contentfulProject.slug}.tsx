@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import Seo from '../components/seo';
 import TemplateHeader from '../components/TemplateHeader';
 import Links from '../components/Links';
 import { Description } from '../components/Description';

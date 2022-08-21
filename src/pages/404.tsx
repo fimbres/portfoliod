@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Link } from "gatsby";
 
-import Seo from "../components/Seo";
+import Seo from "../components/seo";
 import Layout from "../components/Layout";
 import ModalContext from "../context/ModalContext";
 import "../assets/scss/pages.scss";
