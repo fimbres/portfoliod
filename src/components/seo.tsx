@@ -1,17 +1,10 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import React, { FC, Children } from "react";
+import React, { FC, ReactNode } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 interface SeoProps {
   title: string;
   description?: string;
-  children?: typeof Children;
+  children?: ReactNode;
 }
 
 const query = graphql`
