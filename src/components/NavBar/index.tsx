@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'gatsby';
-import { globalHistory } from "@reach/router";
 
 import Logo from "../../assets/svg/logo.svg";
 import "./NavBar.scss";
@@ -16,8 +15,7 @@ export interface navItem {
 const NavBar: FC = () => {
   const [scrollHeight, setScrollHeight] = useState<number>(0);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const path = globalHistory.location.pathname;
-  const navbarClassName = path === "/" ? `navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}` : "navbar navbar--active";
+  const navbarClassName = `navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}`;
   const isBrowser = typeof window !== "undefined";
 
   const handleScroll = () => {
@@ -25,7 +23,7 @@ const NavBar: FC = () => {
     setScrollHeight(position);
   }
 
-  if(isBrowser && path === "/"){
+  if(isBrowser){
     window.addEventListener('scroll', handleScroll);
   }
 
@@ -41,7 +39,7 @@ const NavBar: FC = () => {
 
         return (
           <>
-            <div className={navbarClassName}>
+            <div className={ModalContext.scroll ? navbarClassName : "navbar navbar--active"}>
               <div className='navbar__items'>
                 <Link to='/' className='navbar__items__logo'>
                   <Logo className='navbar__items__logo__img'/>

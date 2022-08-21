@@ -14,7 +14,7 @@ const IndexPage: FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <ModalContext.Provider value={{ showModal, handleContact: () => setShowModal(!showModal) }}>
+    <ModalContext.Provider value={{ scroll: true, showModal, handleContact: () => setShowModal(!showModal) }}>
       <Layout>
         <Seo title="Home" />
         <HomeHeader />

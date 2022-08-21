@@ -11,7 +11,7 @@ const NotFoundPage: FC = () => {
     const [showModal, setShowModal] = useState(false);
   
     return (
-      <ModalContext.Provider value={{ showModal, handleContact: () => setShowModal(!showModal) }}>
+      <ModalContext.Provider value={{ scroll: false, showModal, handleContact: () => setShowModal(!showModal) }}>
         <Layout>
             <Seo title="Not Found" />
             <div className="bg-white dark:bg-neutral-800">

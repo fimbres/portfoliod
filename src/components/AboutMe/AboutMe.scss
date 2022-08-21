@@ -2,8 +2,8 @@
     @apply max-w-5xl mx-auto flex flex-col md:flex-row-reverse px-6 py-20 items-center;
 
     &__image {
-        @apply rounded-full w-full h-full object-cover md:mb-0 mb-12;
-        border-radius: 50%;
+        @apply w-full h-full object-cover md:mb-0 mb-12;
+        border-radius: 50% !important;
     }
 
     &__info-container {

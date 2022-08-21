@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 
 const defaultValue = {
+    scroll: true,
     showModal: false,
     handleContact: () => {}
 }

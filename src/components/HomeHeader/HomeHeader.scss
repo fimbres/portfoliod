@@ -2,8 +2,7 @@
     @apply relative h-screen overflow-hidden w-full object-contain;
 
     &__video {
-        @apply object-cover h-full w-full;
-        filter: brightness(60%);
+        @apply object-cover h-full w-full brightness-125 dark:brightness-50;
         z-index: 0;
     }
 

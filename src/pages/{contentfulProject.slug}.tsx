@@ -77,7 +77,7 @@ const Template: FC<TemplateProps> = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <ModalContext.Provider value={{ showModal, handleContact: () => setShowModal(!showModal) }}>
+    <ModalContext.Provider value={{ scroll: false, showModal, handleContact: () => setShowModal(!showModal) }}>
       <Layout>
         <Seo title={title} />
         <TemplateHeader title={title} description={shortDescription} image={carousselImage} slug={slug}/>
