@@ -14,7 +14,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ navItems, showMobileMenu }) => {
   return (
     <div className={`nav ${showMobileMenu ? "open" : ""}`}>
         <div className={`menu-nav ${showMobileMenu ? "open" : ""}`}>
-            {navItems.map((item, index) => <Link key={index} to={item.to} className={`menu-nav__item ${showMobileMenu ? "open" : ""}`} activeClassName='active'>{item.name}</Link>)}
+            {navItems.map((item, index) => <div key={index} onClick={item.onClick} className={`menu-nav__item ${showMobileMenu ? "open" : ""}`}>{item.name}</div>)}
             <div className={`menu-nav__item ${showMobileMenu ? "open" : ""}`}>
               <Toggle />
             </div>
