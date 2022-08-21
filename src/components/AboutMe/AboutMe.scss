@@ -3,6 +3,7 @@
 
     &__image {
         @apply rounded-full w-full h-full object-cover md:mb-0 mb-12;
+        border-radius: 50%;
     }
 
     &__info-container {
