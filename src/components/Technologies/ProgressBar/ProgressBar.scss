@@ -1,10 +1,8 @@
-$progress_value: 0;
-
 .progress-bar {
     @apply relative h-48 w-48;
 
     &__card {
-        @apply absolute w-full h-full rounded-full dark:border-neutral-800 drop-shadow-xl;
+        @apply absolute w-full h-full rounded-full border-zinc-200 dark:border-neutral-800 drop-shadow-xl;
         border-width: 25px;
     }
 
@@ -14,7 +12,6 @@ $progress_value: 0;
         > svg {
             @apply w-48 h-48;
             fill: none;
-            stroke: url(#paint0_angular_109_2);
             stroke-width: 25px;
             stroke-dasharray: 405;
         }
