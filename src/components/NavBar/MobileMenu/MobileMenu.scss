@@ -1,19 +1,20 @@
 .nav {
-    @apply md:hidden fixed bottom-0 left-0 w-full opacity-0 z-10 transition-all duration-500 ease-in-out pointer-events-none -translate-y-full;
-    height: calc(100vh - 64px);
+    @apply md:hidden fixed bottom-0 left-0 w-full opacity-0 z-10 transition-all duration-500 ease-in-out pointer-events-none -translate-x-full;
+    height: 100vh;
+    width: calc(100vw - 60px);
 
     &.open {
-        @apply opacity-100 pointer-events-auto translate-y-0;
+        @apply opacity-100 pointer-events-auto translate-x-0;
     }
 
     .menu-nav {
         @apply flex items-center overflow-hidden justify-center list-none pr-4 transition-transform duration-500 ease-in-out space-y-14 bg-gray-100 dark:bg-zinc-900;
         flex-flow: column wrap;
-        height: calc(100vh - 65px);
+        height: 100vh;
 
         &__item {
             @apply inline-block text-3xl font-medium transition-transform duration-500 ease-in-out text-gray-600 dark:text-gray-100 cursor-pointer;
-            transform: translateX(100vw);
+            transform: -translateX(100vw);
             
             &.open {
                 @apply translate-x-0;
@@ -26,8 +27,8 @@
     }
 }
 
-// @for $i from 1 through 4 {
-//     .menu-nav__item:nth-child(#{$i}) {
-//         transition-delay: ($i * 0.1s) + 0.15s;
-//     }
-// }
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.15s;
+    }
+}
