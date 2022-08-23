@@ -1,16 +1,21 @@
 .nav {
-    @apply md:hidden fixed bottom-0 left-0 w-full opacity-0 z-10 transition-all duration-500 ease-in-out pointer-events-none -translate-x-full;
+    @apply md:hidden fixed bottom-0 left-0 w-full opacity-0 z-10 transition-all duration-500 ease-in-out pointer-events-none;
     height: 100vh;
-    width: calc(100vw - 60px);
+    width: 100vw;
 
     &.open {
-        @apply opacity-100 pointer-events-auto translate-x-0;
+        @apply opacity-100 pointer-events-auto backdrop-blur-sm backdrop-brightness-50;
     }
 
     .menu-nav {
-        @apply flex items-center overflow-hidden justify-center list-none pr-4 transition-transform duration-500 ease-in-out space-y-14 bg-gray-100 dark:bg-zinc-900;
+        @apply flex items-center overflow-hidden justify-center list-none pr-4 transition-all duration-500 ease-in-out space-y-14 bg-gray-100 dark:bg-zinc-900 -translate-x-full;
         flex-flow: column wrap;
         height: 100vh;
+        width: calc(100vw - 60px);
+
+        &.open {
+            @apply translate-x-0;
+        }
 
         &__item {
             @apply inline-block text-3xl font-medium transition-transform duration-500 ease-in-out text-gray-600 dark:text-gray-100 cursor-pointer;

@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Link } from 'gatsby';
 
 import { navItem } from '..';
 import "./MobileMenu.scss";

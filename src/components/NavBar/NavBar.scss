@@ -1,6 +1,6 @@
 .navbar {
     @apply fixed inset-x-0 top-0 p-3 transition-colors duration-300 ease-in-out;
-    z-index: 8;
+    z-index: 12;
 
     &--active{
         @apply bg-gray-100 dark:bg-zinc-900;
