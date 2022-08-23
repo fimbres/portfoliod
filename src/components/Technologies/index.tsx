@@ -14,7 +14,7 @@ interface TechnologiesProps {
 
 const Technologies: FC<TechnologiesProps> = ({ technologies }) => {
   return (
-    <div className='bg-zinc-100 dark:bg-neutral-600'>
+    <div className='bg-white dark:bg-neutral-600'>
         <div className='technologies'>
             <div className='technologies__title'>Technologies</div>
             <div className='technologies__container'>
