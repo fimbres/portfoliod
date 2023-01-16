@@ -19,9 +19,9 @@ const query = graphql`
   }
 `;
 
-const Seo: FC<SeoProps> = ({ description, title, children }) => {
+const Seo: FC<SeoProps> = ({ title, children }) => {
   const { site } = useStaticQuery(query);
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = "You can see more about my work and contact me in this awesome portfolio!" || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
   return (
