@@ -38,7 +38,7 @@
         @apply bg-transparent text-red-500 font-medium text-lg border-2 border-red-600 transition-colors ease-in-out duration-500;
 
         &:hover {
-            @apply bg-red-600 border-transparent text-white;
+            @apply bg-red-500/10;
         }
     }
 }
