@@ -12,20 +12,13 @@ export interface navItem {
   onClick: () => void;
 }
 
-const NavBar: FC = () => {
-  const [scrollHeight, setScrollHeight] = useState<number>(0);
+interface NavBarProps {
+  showBackground: boolean;
+}
+
+const NavBar: FC<NavBarProps> = ({ showBackground }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const navbarClassName = `navbar ${scrollHeight > 0 ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}`;
-  const isBrowser = typeof window !== "undefined";
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollHeight(position);
-  }
-
-  if(isBrowser){
-    window.addEventListener('scroll', handleScroll);
-  }
+  const navbarClassName = `navbar ${showBackground ? "navbar--active" : showMobileMenu ? "navbar--mobile" : "navbar--inactive"}`;
 
   return (
     <ModalContext.Consumer>

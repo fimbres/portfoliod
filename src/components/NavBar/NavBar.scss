@@ -52,7 +52,7 @@
         &__hamburger-menu {
             @apply fixed bg-red-500 transition-all duration-500 ease-in-out md:hidden inline;
             z-index: 15;
-            right: 12px;
+            right: 24px;
             top: 2rem;
             width: 28px;
             height: 3px;
