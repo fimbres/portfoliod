@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { FaReact, FaPython, FaUser, FaGitAlt, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript, SiExpress, SiDotnet, SiMongodb, SiGatsby } from 'react-icons/si';
-import { MdDesignServices } from 'react-icons/md';
-import { GrMysql } from 'react-icons/gr';
+import { SiTypescript, SiPostgresql, SiAwsamplify, SiMongodb, SiGatsby, SiGraphql } from 'react-icons/si';
+import { TbBrandNextjs } from 'react-icons/tb';
 
 import "./Skills.scss";
 import { Skill } from './Skill';
@@ -11,19 +10,15 @@ export const Skills: FC = () => {
     const skills = [
         {
             icon: <FaReact size={60}/>,
-            text: "React/React Native"
+            text: "React Native"
         },
         {
-            icon: <SiTypescript size={60}/>,
-            text: "TypeScript"
+            icon: <TbBrandNextjs size={60}/>,
+            text: "NextJs"
         },
         {
             icon: <SiGatsby size={60}/>,
-            text: "Gatsby"
-        },
-        {
-            icon: <FaGitAlt size={60}/>,
-            text: "Git"
+            text: "GatsbyJs"
         },
         {
             icon: <FaUser size={60}/>,
@@ -34,28 +29,32 @@ export const Skills: FC = () => {
             text: "Python"
         },
         {
-            icon: <SiDotnet size={60}/>,
-            text: ".NET Framework"
+            icon: <SiTypescript size={60}/>,
+            text: "TypeScript"
         },
         {
-            icon: <MdDesignServices size={60}/>,
-            text: "Graphic Design"
+            icon: <SiGraphql size={60}/>,
+            text: "GraphQL"
         },
         {
-            icon: <SiExpress size={60}/>,
-            text: "ExpressJs"
+            icon: <FaGitAlt size={60}/>,
+            text: "Git"
         },
         {
             icon: <FaNodeJs size={60}/>,
             text: "NodeJs"
         },
         {
+            icon: <SiAwsamplify size={60}/>,
+            text: "AWS Services"
+        },
+        {
             icon: <SiMongodb size={60}/>,
             text: "MongoDB"
         },
         {
-            icon: <GrMysql size={60}/>,
-            text: "MySQL"
+            icon: <SiPostgresql size={60}/>,
+            text: "PostgreSQL"
         },
     ];
 
