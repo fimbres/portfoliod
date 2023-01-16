@@ -18,7 +18,7 @@ export const query = graphql`
   query ($slug: String) {
     contentfulProject(slug: {eq: $slug}) {
       carousselImage {
-        gatsbyImage(width: 300)
+        gatsbyImage(placeholder: BLURRED, width: 300)
       }
       codeUrl
       demoUrl
@@ -26,7 +26,7 @@ export const query = graphql`
         feature
       }
       images {
-        gatsbyImage(width: 300)
+        gatsbyImage(placeholder: BLURRED, width: 300)
         description
       }
       longDescription

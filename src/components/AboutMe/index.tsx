@@ -15,7 +15,7 @@ export const AboutMe: FC = () => {
       {ModalContext => (
         <div className='bg-white dark:bg-neutral-700'>
             <div className='about-me'>
-                <StaticImage src='../../assets/images/profile.png' alt="Isaac Fimbres" placeholder="tracedSVG" className='about-me__image'/>
+                <StaticImage src='../../assets/images/profile.png' alt="Isaac Fimbres" placeholder="blurred" className='about-me__image'/>
                 <div className='about-me__info-container'>
                     <div className='about-me__info-container__title'>About Me</div>
                     <div className='about-me__info-container__text'>I'm an enthusiastic software engineer with experience with both web and mobile development.</div>
