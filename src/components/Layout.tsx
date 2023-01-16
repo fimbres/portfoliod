@@ -15,7 +15,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   const onScroll = () => {
     const scrollHeight = scrollRef?.current?.scrollTop;
     setScrollHeight(scrollHeight!);
-    console.log(scrollHeight);
   }
 
   useEffect(() => {
