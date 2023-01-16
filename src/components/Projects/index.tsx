@@ -30,7 +30,7 @@ export const Projects: FC<ProjectsProps> = ({ title }) => {
   const { allContentfulProject: { nodes: projects } } = useStaticQuery(query);
 
   return (
-    <div className="py-24 bg-neutral-300 dark:bg-neutral-800">
+    <div className="py-24 bg-zin-50 dark:bg-neutral-800">
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-center">
           <div className="flex flex-col w-full justify-center items-center overflow-hidden">
