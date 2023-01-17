@@ -2,7 +2,7 @@
     @apply flex flex-col justify-center items-center lg:p-8 p-4;
 
     &__text {
-        @apply text-black dark:text-white text-sm font-normal text-center mb-8;
+        @apply text-black dark:text-white text-sm font-normal text-center mb-8 h-12;
     }
 
     &__image{
@@ -26,4 +26,10 @@
 
 .slide__robot {
     width: 264px;
+}
+
+.slide__landing {
+    margin-bottom: 95px;
+    margin-top: 50px;
+    width: 300px;
 }

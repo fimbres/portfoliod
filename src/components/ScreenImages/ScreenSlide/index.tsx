@@ -12,7 +12,7 @@ interface ScreenSlideProps {
 }
 
 const ScreenSlide: FC<ScreenSlideProps> = ({ image, imageClassName, slug, description, index }) => {
-  const fixexImageClassName = slug === "eva-gyroscope" && index === 0 ? "slide__robot" : imageClassName; 
+  const fixexImageClassName = slug === "eva-gyroscope" && index === 0 ? "slide__robot" : slug === "clean-location" && index === 2 ? "slide__landing" : imageClassName; 
   return (
     <div className="screen-slide">
       <GatsbyImage image={image} className={`screen-slide__image ${fixexImageClassName}`} alt={slug}/>

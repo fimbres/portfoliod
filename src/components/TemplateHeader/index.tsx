@@ -21,7 +21,7 @@ const TemplateHeader: FC<TemplateHeaderProps> = ({ title, description, image, sl
                     <div className='template-header__text-container__text'>{description}</div>
                 </div>
                 <div className='template-header__image-container'>
-                    <GatsbyImage image={pathToImage!} alt={title} className={`template-header__image-container__image ${slug === "eva-gyroscope" ? "mobile-vertical-Header" : slug === "project-01" ? "mobile-horizontal-Header" : "desktop-Header"}`}/>
+                    <GatsbyImage image={pathToImage!} alt={title} className={`template-header__image-container__image ${slug === "eva-gyroscope" || slug === "clean-location" ? "mobile-vertical-Header" : "desktop-Header"}`}/>
                 </div>
             </div>
         </div>

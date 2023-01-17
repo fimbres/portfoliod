@@ -36,7 +36,7 @@ export const ScreenImages: FC<ScreenImagesProps> = ({ screenImages, slug }) => {
             >
               {screenImages.map((screenShot, index) => {
                 const pathToImage = getImage(screenShot.gatsbyImage);
-                const imageClassName = slug === "project-01" ? "screen-slide__mobile-horizontal" : slug === "eva-gyroscope" ? "screen-slide__mobile-vertical" : "screen-slide__desktop";
+                const imageClassName = slug === "eva-gyroscope" || slug === "clean-location" ? "screen-slide__mobile-vertical" : "screen-slide__desktop";
 
                 return (
                     <ScreenSlide

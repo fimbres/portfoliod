@@ -15,7 +15,7 @@ const Project: FC<ProjectProps> = ({ title, image, slug, description }) => {
   return (
     <div className="project">
       <Link to={`/${slug}`}>
-      <GatsbyImage image={image} className={`project__image ${slug === "eva-gyroscope" ? "mobile-vertical" : slug === "project-01" ? "mobile-horizontal" : "desktop"}`} alt={title}/>
+      <GatsbyImage image={image} className={`project__image ${slug === "eva-gyroscope" || slug === "clean-location" ? "mobile-vertical" : "desktop"}`} alt={title}/>
       </Link>
       <div className="project__title">{title}</div>
       <div className="project__text">{description}</div>
